@@ -17,8 +17,8 @@ ORDER BY VesselName;
 SELECT ModelName, ModelCapacity
 FROM model
 WHERE ModelID in (SELECT ModelID
-				  FROM vessel
-                  WHERE YEAR(CURRENT_DATE()) - VPurchaseYear <= 5);
+FROM vessel
+WHERE YEAR(CURRENT_DATE()) - VPurchaseYear <= 5);
 
 /*
 3. Print Staff and their Manager's Names and Positions, with their last rostered date within the last 5 years
@@ -116,8 +116,7 @@ SELECT YEAR(r.EndDateTime), s.StaffName, s.StaffPay
 FROM staff s
 JOIN roster r ON r.StaffID = s.StaffID
 GROUP BY YEAR(r.EndDateTime), s.StaffName
-HAVING s.StaffPay < (SELECT AVG(s.StaffPay)
-					FROM staff s);
+HAVING s.StaffPay < (SELECT AVG(s.StaffPay) FROM staff s);
 
 /*
 12. Print all locations along with the details of any routes that start from them. 
