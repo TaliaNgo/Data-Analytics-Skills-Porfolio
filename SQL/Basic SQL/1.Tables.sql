@@ -227,9 +227,15 @@ INSERT INTO service VALUES ('V02', 'SD02', '2022-04-18');
 INSERT INTO service VALUES ('V03', 'SD03', '2021-09-30');
 INSERT INTO service VALUES ('V04', 'SD04', '2019-07-11');
 INSERT INTO service VALUES ('V05', 'SD05', '2020-08-27');
+INSERT INTO service VALUES ('V02', 'SD01', '2022-08-23');
 
+-- location table
 INSERT INTO location VALUES ('L01', 'Sydney');
 INSERT INTO location VALUES ('L02', 'Singapore');
 INSERT INTO location VALUES ('L03', 'Taipei');
 INSERT INTO location VALUES ('L04', 'Osaka');
 INSERT INTO location VALUES ('L05', 'Melbourne');
+
+-- MODIFY VALUES
+UPDATE location SET LocationName = Brisbane WHERE LocationCode = 'L05';
+DELETE FROM service WHERE VesselID = 'V02';
