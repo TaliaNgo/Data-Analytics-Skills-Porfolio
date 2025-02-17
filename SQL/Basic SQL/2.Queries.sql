@@ -16,9 +16,7 @@ ORDER BY VesselName;
 */
 SELECT ModelName, ModelCapacity
 FROM model
-WHERE ModelID in (SELECT ModelID
-FROM vessel
-WHERE YEAR(CURRENT_DATE()) - VPurchaseYear <= 5);
+WHERE ModelID in (SELECT ModelID FROM vessel WHERE YEAR(CURRENT_DATE()) - VPurchaseYear <= 5);
 
 /*
 3. Print Staff and their Manager's Names and Positions, with their last rostered date within the last 5 years
