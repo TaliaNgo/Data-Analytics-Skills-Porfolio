@@ -68,7 +68,6 @@ GROUP BY s1.StaffName, s2.ScheduleID, c.CruiseID, t.TourCost;
 7. Print all the tours:
 - That costs more than $2,500, and scheduled in Jan or between 2020 and 2022
 - Order by the highest cost first
-- INNER-JOIN
 */
 SELECT DISTINCT t.*
 FROM tour t 
