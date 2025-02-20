@@ -69,3 +69,48 @@ FROM [JCS].[dbo].[Customer]
 -- final report - join with customers
 select * from #SHSDCS s join #Customer c on s.[CustNo] = c.[CustNo]
 order by s.[SaleDate] desc
+
+-- Step 1: Extract recent shipment records into a temporary table
+SELECT [ShipmentID],  
+       [ShipmentDate],  
+       [StaffID],  
+       [Destination],  
+       [CustomerID],  
+       [TotalWeight]  
+INTO #RecentShipments  
+FROM [LogisticsDB].[dbo].[ShipmentHeader]  
+WHERE [ShipmentDate] BETWEEN '2024-01-01' AND '2024-08-31'  
+ORDER BY [ShipmentDate] DESC;  
+
+-- Step 2: Extract shipment details (linking shipment ID with products)
+SELECT [ShipmentID],  
+       [ProductCode],  
+       [ProductDescription],  
+       [Quantity],  
+       [UnitPrice],  
+       [TotalPrice]  
+INTO #ShipmentDetails  
+FROM [LogisticsDB].[dbo].[ShipmentDetails];  
+
+-- Step 3: Join recent shipments with shipment details  
+SELECT s.*, d.[ProductDescription], d.[TotalPrice]  
+INTO #ShipmentSummary  
+FROM #RecentShipments s  
+LEFT JOIN #ShipmentDetails d  
+ON s.[ShipmentID] = d.[ShipmentID]  
+ORDER BY s.[ShipmentDate] DESC;  
+
+-- Step 4: Retrieve customer data  
+SELECT [CustomerID],  
+       [CustomerName],  
+       [Region],  
+       [TotalSpent]  
+INTO #CustomerData  
+FROM [LogisticsDB].[dbo].[Customers];  
+
+-- Step 5: Final report - Join shipment summary with customer details  
+SELECT s.*, c.[CustomerName], c.[Region], c.[TotalSpent]  
+FROM #ShipmentSummary s  
+LEFT JOIN #CustomerData c  
+ON s.[CustomerID] = c.[CustomerID]  
+ORDER BY s.[ShipmentDate] DESC;
