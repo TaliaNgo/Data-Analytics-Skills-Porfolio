@@ -11,14 +11,14 @@ This project showcases my ability to **design, manipulate, and analyse relationa
 
 ---
 
-### 📂 [1.Tables](./1.Tables.sql)
+### 📂 [1. Database](./DB.sql)
 This SQL script includes a **fully structured database** with key SQL commands:  
 - **Data Definition (DDL):** `CREATE TABLE`  
 - **Data Manipulation (DML):** `INSERT`, `UPDATE`, `DELETE`
 
 ---
 
-### 🔎 [2.Queries](./2.Queries.sql)
+### 🔎 [2. Queries](./Queries.sql)
 The SQL queries in this script focus on **extracting, aggregating, and analysing** data. Key concepts include:  
 - **SELECT statements**
 - **Subqueries**
