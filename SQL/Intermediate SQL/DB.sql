@@ -20,7 +20,7 @@ CREATE TABLE Member (
   MemberPhone varchar(10),
   OverdueFee decimal(10,2) unsigned default 0,
 
-  PRIMARY KEY (`MemberID`)
+  PRIMARY KEY (MemberID)
 );
 
 CREATE TABLE Publisher (
