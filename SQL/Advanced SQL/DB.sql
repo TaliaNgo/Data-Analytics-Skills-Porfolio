@@ -2,7 +2,7 @@
 DROP TABLE IF EXISTS Borrowedby, Holding, Authoredby, Author, Book, Publisher, Member, Branch;
 
 CREATE TABLE Branch (
-  BranchID INT NOT NULL, 
+  BranchID INT NOT NULL,
   BranchSuburb varchar(255) NOT NULL,
   BranchState char(3) NOT NULL,
 
@@ -156,11 +156,11 @@ INSERT INTO Holding VALUES ('3', '4','4','0');
 INSERT INTO Holding VALUES ('3', '5','2','1');
 
 DELETE FROM Borrowedby;
-INSERT INTO Borrowedby VALUES ('1', '1','2',curdate(),NULL,date_add(curdate(),INTERVAL 3 WEEK));
-INSERT INTO Borrowedby VALUES ('2', '4','4',curdate(),NULL,date_add(curdate(),INTERVAL 3 WEEK));
-INSERT INTO Borrowedby VALUES ('2', '1','4',curdate(),NULL,date_add(curdate(),INTERVAL 3 WEEK));
-INSERT INTO Borrowedby VALUES ('2', '4','1',curdate(),NULL,date_add(curdate(),INTERVAL 3 WEEK));
-INSERT INTO Borrowedby VALUES ('3', '5','3',curdate(),NULL,date_add(curdate(),INTERVAL 3 WEEK));
+INSERT INTO Borrowedby VALUES ('1', '1','2',CURDATE(),NULL,DATE_ADD(CURDATE(),INTERVAL 3 WEEK));
+INSERT INTO Borrowedby VALUES ('2', '4','4',CURDATE(),NULL,DATE_ADD(CURDATE(),INTERVAL 3 WEEK));
+INSERT INTO Borrowedby VALUES ('2', '1','4',CURDATE(),NULL,DATE_ADD(CURDATE(),INTERVAL 3 WEEK));
+INSERT INTO Borrowedby VALUES ('2', '4','1',CURDATE(),NULL,DATE_ADD(CURDATE(),INTERVAL 3 WEEK));
+INSERT INTO Borrowedby VALUES ('3', '5','3',CURDATE(),NULL,DATE_ADD(CURDATE(),INTERVAL 3 WEEK));
 INSERT INTO Borrowedby VALUES ('1', '1','1','2020-08-30',NULL,'2020-09-30');
 INSERT INTO Borrowedby VALUES ('1', '2','2','2020-08-30',NULL,'2020-09-30');
 INSERT INTO Borrowedby VALUES ('3', '4','2','2020-08-30',NULL,'2020-09-30');
