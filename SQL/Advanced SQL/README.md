@@ -20,7 +20,8 @@ This SQL script creates a small database for a library, with the structure as fo
 ### ⚙️ [2. Stored Procedure & Trigger](./Procedure_Trigger.sql)
 This script includes automated database logic to maintain data integrity and enforce business rules:   
 - **Stored Procedure**: Handles membership termination based on overdue books and suspensions
-- **Trigger**: Automatically resets a member’s status when overdue books and fees are cleared
+- **Trigger**: Automatically resets a member’s status when overdue books and fees are cleared   
+
 Key concepts include:
 - Cursor
 - etc.
@@ -32,3 +33,5 @@ The SQL query in this script generates a report on the total number of book borr
 - **Window Functions**: `PARTITION_BY()`, `ROW_NUMBER() OVER`, `COUNT() OVER`
 - **CASE Statement**
 - **CTEs**
+
+A sample of the report format is below:
