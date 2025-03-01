@@ -1,3 +1,4 @@
+-- January 2025 Branch-Wise Daily Borrowing Report
 -- Get book borrowings in January
 WITH Borrowings AS 
 (SELECT DISTINCT b.BookIssueID, b.BranchID, b.DateBorrowed, b.BookID
