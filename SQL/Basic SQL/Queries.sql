@@ -89,7 +89,7 @@ GROUP BY c.CruiseID;
 /*
 9. Print Staff's average earnings in the fourth quarter of 2022
 */
-SELECT CEILING(AVG(s.StaffPay))
+SELECT CEIL(AVG(s.StaffPay))
 FROM staff s
 JOIN roster r ON s.StaffID = r.StaffID
 WHERE QUARTER(r.EndDateTime) = 4 AND YEAR(r.EndDateTime) = '2022';
