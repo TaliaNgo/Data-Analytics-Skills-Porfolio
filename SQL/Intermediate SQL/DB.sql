@@ -132,11 +132,11 @@ INSERT INTO Member VALUES ('7', 'REGULAR', 'Talia', '41 Somewhere Rd', 'Suburb 1
 INSERT INTO Member VALUES ('8', 'SUSPENDED', 'James', '41 Nowhere Rd', 'Suburb 9', 'NSW', '2023-12-31', '040948373', '-20');
 
 DELETE FROM Book;
-INSERT INTO Book VALUES ('1','Anna Karenina','1','2003',12.75);
-INSERT INTO Book VALUES ('2','War and Peace','2','1869',139.99);
-INSERT INTO Book VALUES ('3','The Hobbit','2','1937',9.19);
-INSERT INTO Book VALUES ('4','I, Robot','2','1950',29.99);
-INSERT INTO Book VALUES ('5','The Positronic Man','3','2010',125.99);
+INSERT INTO Book VALUES ('1','Crime and Punishment','1','2003',40.75);
+INSERT INTO Book VALUES ('2','Dopamine Nation','2','2023',20.99);
+INSERT INTO Book VALUES ('3','All The Light We Cannot See','2','2019',10.19);
+INSERT INTO Book VALUES ('4','The Alchemist','2','1999',29.99);
+INSERT INTO Book VALUES ('5','The Psychology of Money','3','2010',35.99);
 
 DELETE FROM Authoredby;
 INSERT INTO Authoredby (BookID,AuthorID) VALUES ('1', '1');
