@@ -45,9 +45,9 @@ END //
 DELIMITER ;
 
 /*
-This STORED PROCEDURE changes the membership status to "TERMINATED" of members who meet the bellow conditions:
-- currently have an overdue item
-- have membership suspended twice in the last 3 years
+This STORED PROCEDURE changes the member's membership status to "TERMINATED" if that member:
+- currently has more than 1 overdue item
+- have membership suspended more than twice in the last 3 years
 */
 DROP PROCEDURE IF EXISTS endMembership;
 
@@ -85,7 +85,7 @@ BEGIN
     AND YEAR(SuspendedDate) >= threeYearsAgo;
 
 	-- terminate the membership if conditions satisfied
-	IF suspensionCount = 2 AND totalOverdueItem = 1 THEN
+	IF suspensionCount = 2 AND totalOverdueItem >= 1 THEN
 		-- print out a list of members
 		SELECT MemberName AS 'Members with terminated memberships'
         FROM Member
