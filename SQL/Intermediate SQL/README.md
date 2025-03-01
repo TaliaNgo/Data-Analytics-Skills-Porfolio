@@ -19,12 +19,10 @@ This SQL script creates a small database for a library, with the structure as fo
 
 ### ⚙️ [2. Stored Procedure & Trigger](./Procedure_Trigger.sql)
 This script includes automated database logic to maintain data integrity and enforce business rules:   
-- **Stored Procedure**: Handles membership termination based on overdue books and suspensions
-- **Trigger**: Automatically resets a member’s status when overdue books and fees are cleared   
-
-Key concepts include:
-- Cursor
-- etc.
+- **Stored Procedure**:   
+  This procedure handles membership termination based on overdue books and suspensions. It changes the member's status to "TERMINATED" when that member has at least an overdue item or has their membership suspended in the last 3 years.   
+- **Trigger**:   
+  This trigger automatically updates a member's status from "SUSPENDED" to "REGULAR" when the member has no outstanding fees or no overdue items. It is triggered when there is an update on the Borrowedby table.   
 
 ---
 
@@ -34,4 +32,10 @@ The SQL query in this script generates a report on the total number of book borr
 - **CASE Statement**
 - **CTEs**
 
-A sample of the report format is below:
+A sample of the report header is below:   
+Branch ID | Branch Location | Borrowed Date | Book Title | Daily Borrowing Count | Branch Borrowing Count
+--- | --- | --- | --- | --- | ---   
+1 | Parramatta | 06/01/2025 | Crime and Punishment | 2 | 3
+||| 06/01/2025 | Dopamine Nation ||
+||| 08/01/2025 | The Alchemist | 1 |
+2 | North Ryde | 10/01/2025 | The Psychology of Money | 3 | 6
