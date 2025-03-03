@@ -1,17 +1,12 @@
 ### Part 1.
 The dataset contains records on users' product ratings and reviews on an e-commerce platform. Auser may rate multiple items and an item may receive ratings and reviews from multiple users. Users can also evaluate each other's ratings and reviews.   
+
 This dataset includes details about:   
-- User profile: ID, gender, city of birth   
-- Ratings & Reviews: product ratings (on a scale of 1-5), reviews, timestamp, average helpfulness of the rating given by others (on a scale of 1-5)   
-- Product information: product name, ID, price, category
+- **User profile**: ID, gender, city of birth   
+- **Ratings & Reviews**: ratings (on a scale of 1-5), reviews, timestamp, average helpfulness of the rating given by others (on a scale of 1-5)   
+- **Product**: product name, ID, price, category
 
-Below is an explanation on the structure of this dataset:
-
-| userId | gender | rating | review| item | category | helpfulness | timestamp | item_id | item_price | user_city|
-
-    | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |  ---- |  ---- |  
-    
-#### Description of Fields
+Below are the descriptions of the columns of this dataset:   
 
 * __userId__ - the user's id
 * __gender__ - the user's gender
